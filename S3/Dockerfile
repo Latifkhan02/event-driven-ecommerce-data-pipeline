@@ -7,8 +7,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-# Copy requirements and Makefile first (for better layer caching)
+
 COPY requirements.txt Makefile ./
+# Copy requirements and Makefile first (for better layer caching)
 
 # Install Python dependencies
 RUN make install
